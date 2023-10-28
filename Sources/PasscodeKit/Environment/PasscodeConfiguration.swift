@@ -27,7 +27,7 @@ private struct PasscodeTintColorKey: EnvironmentKey {
     }
 }
 
-struct PasscodeBackgroundMaterialKey: EnvironmentKey {
+private struct PasscodeBackgroundMaterialKey: EnvironmentKey {
     static var defaultValue: Material? {
         .regular
     }

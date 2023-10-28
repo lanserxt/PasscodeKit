@@ -1,14 +1,14 @@
 //
-//  PasscodeSetupViewModifier.swift
+//  PasscodeChangeViewModifier.swift
 //  PasscodeKit
 //
-//  Created by David Walter on 13.08.23.
+//  Created by David Walter on 19.10.23.
 //
 
 import SwiftUI
 import PasscodeCore
 
-struct PasscodeSetupViewModifier: ViewModifier {
+struct PasscodeChangeViewModifier: ViewModifier {
     @Environment(\.passcode.manager) private var passcodeManager
     
     @Binding var isPresented: Bool
@@ -31,7 +31,7 @@ struct PasscodeSetupViewModifier: ViewModifier {
         content
             .fullScreenCover(isPresented: $isPresented) {
                 NavigationView {
-                    PasscodeSetupView(types: types) { code in
+                    PasscodeChangeView(types: types) { code in
                         defer { self.isPresented = false }
                         
                         let result = passcodeManager.setPasscode(code)
